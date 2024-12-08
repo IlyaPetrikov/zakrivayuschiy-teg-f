@@ -10,7 +10,386 @@
 
 */
 
+@keyframes contour {
+	0% {
+		fill: var(--main-color);
+	}
+	100% {
+		fill: var(--accent-color);
+	}
+}
+
+@keyframes core {
+	0% {
+		fill: none;
+	}
+	50% {
+		fill: var(--accent-color);
+	}
+	100% {
+		fill: var(--accent-color);
+	}
+}
+
+@keyframes main-body {
+	0% {
+		fill: none;
+	}
+	25% {
+		fill: none;
+	}
+	50% {
+		fill: var(--accent-color);
+	}
+	75% {
+		fill: var(--accent-color);
+	}
+	100% {
+		fill: var(--accent-color);
+	}
+}
+
+@keyframes heart {
+	0% {
+		fill: none;
+	}
+	50% {
+		fill: var(--accent-color);
+		transform: scale(1.2);
+	}
+	100% {
+		fill: var(--accent-color);
+		transform: scale(1);
+	}
+}
+
+@keyframes sparks {
+	0% {
+		fill: none;
+	}
+	100% {
+		fill: var(--accent-color);
+	}
+}
+
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-block-start: 100px;
+	min-inline-size: 320px;
+	min-block-size: 100dvb;
+	font-family: var(--ff-Inter), Arial, Helvetica, sans-serif;
+	font-size: var(--fs-text);
+	background-image: var(--gradient);
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.header {
+	margin-block-end: 100px;
+	width: var(--header-width);
+	background-color: #fff;
+}
+
+.header__title {
+	text-align: center;
+	font-family: var(--ff-2P), sans-serif;
+	padding: clamp(7.563rem, 7.386rem + 0.751vw, 8.063rem)
+		clamp(0.875rem, -1.469rem + 10vw, 7.531rem);
+	font-size: var(--header-fs);
+	border: solid 2px #000;
+	line-height: 50px;
+}
+
+.header__title span {
+	font-size: var(--header-sub-fs);
+	line-height: 23px;
+	text-transform: uppercase;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border: solid 2px #000;
+	max-width: var(--section-width);
+	margin-block-end: 50px;
+	background-color: #fff;
+}
+
+.card__title {
+	border-bottom: solid 2px #000;
+	font-size: var(--fs-text);
+	padding: 5px 24px 4px 10px;
+}
+
+.watter-mark {
+	position: absolute;
+	z-index: 1;
+	font-family: var(--ff-2P);
+	color: rgb(0 0 0/ 0.7);
+	font-size: var(--fs-btn);
+	top: 60px;
+	right: 24px;
+	text-shadow: 1px 0px 0px rgb(255 255 255/0.7),
+		0px 1px 0px rgb(255 255 255/0.7), -1px 0px 0px rgb(255 255 255/0.7),
+		0px -1px 0px rgb(255 255 255/0.7);
+	mix-blend-mode: hard-light;
+}
+
+@supports (text-stroke: 1px #fff) {
+	.watter-mark {
+		text-stroke: 1px #fff;
+	}
+}
+
+.img-container {
+	block-size: var(--img-width);
+	border-bottom: solid 2px #000;
+	margin-block-end: 28px;
+}
+
+.img-state {
+	inline-size: 100%;
+	block-size: 100%;
+	position: relative;
+}
+
+.first-project-img {
+	filter: saturate(0.5);
+}
+
+.first-project-if-img {
+	filter: saturate(4);
+}
+
+.second-project-img {
+	filter: hue-rotate(30deg);
+}
+
+.second-project-about-img {
+	filter: invert(1);
+}
+
+.third-project-img {
+	filter: sepia(0.9);
+}
+.third-project-when-img {
+	filter: blur(23px);
+}
+
+.now-img {
+	filter: hue-rotate(75deg);
+}
+
+.card__content {
+	position: relative;
+}
+
+.card__text {
+	line-height: 21px;
+	padding: 0 25px;
+	margin-block-end: 27px;
+}
+
+.self-text {
+	padding-inline: 25px;
+	margin-block-end: 25px;
+}
+
+.button-area {
+	display: flex;
+	justify-content: end;
+	padding-inline-end: 25px;
+	gap: 5px;
+	align-items: center;
+}
+
+.button {
+	font-family: var(--ff-2P);
+	margin-block-end: 25px;
+	font-size: var(--fs-btn);
+	background-color: transparent;
+	min-width: 130px;
+	height: 38px;
+	cursor: pointer;
+	border-color: #000;
+	position: relative;
+	color: #fff;
+}
+
+.button::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-color: #000;
+	transform-origin: left;
+	transform: scaleX(0);
+	transition: transform 0.5s ease-in-out;
+}
+
+.button:hover::before {
+	content: '';
+	transform: scaleX(1);
+}
+
+.button__text {
+	position: relative;
+	z-index: 10;
+	mix-blend-mode: difference;
+}
+
+.button:focus {
+	outline: none;
+}
+
+.button:focus-visible {
+	box-shadow: 2px 2px #000;
+	transition: all 0.3s;
+}
+
+.card__icon-button {
+	background-color: transparent;
+	border: transparent;
+	margin-block-end: 18px;
+	cursor: pointer;
+	padding: 0;
+	transition: border 0.3s ease;
+}
+
+.card__icon-button:focus {
+	outline: none;
+}
+
+.card__icon-button:focus-visible {
+	border: solid 2px #000;
+}
+
+.is-liked .heart {
+	animation: heart 0.5s 0.3s forwards;
+}
+
+.is-liked .contour {
+	animation: contour 0.2s 0.3s forwards;
+}
+
+.is-liked .core {
+	animation: core 0.3s 0.2s forwards;
+}
+
+.is-liked .main-body {
+	animation: main-body 0.3s 0.3s forwards;
+}
+
+.is-liked .sparks {
+	animation: sparks 0.3s 0.5s ease;
+}
+
+.like-icon:hover .core {
+	fill: var(--main-color);
+	transition: fill 0.3s;
+}
+
+.like-icon:hover .main-body {
+	fill: var(--main-color);
+	transition: fill 0.3s 0.05s;
+}
+
+.like-icon .core {
+	fill: transparent;
+}
+.like-icon .main-body {
+	fill: transparent;
+}
+
+.like-icon:active .core {
+	fill: var(--accent-color);
+	transition: fill 0.1s 0.1s;
+}
+.like-icon:active .main-body {
+	fill: var(--accent-color);
+	transition: fill 0.1s 0.15s;
+}
+
+.floppy-button {
+	width: 340px;
+	height: 55px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 0 20px;
+	background-color: #fff;
+}
+
+.floppy {
+	width: 21px;
+	position: relative;
+	z-index: 2;
+	mix-blend-mode: difference;
+}
+
+.save-dialog {
+	position: fixed;
+	inset: 0;
+	max-width: 353px;
+	min-height: 193px;
+	padding: 30px;
+}
+
+.save-dialog[open]::backdrop {
+	background-color: rgb(0 0 0/ 0.75);
+}
+
+.save-dialog[open] {
+	display: block;
+}
+
+.popup-save {
+	display: flex;
+	gap: 20px;
+	margin-block-end: 30px;
+}
+
+.popup-text {
+	font-family: var(--ff-2P);
+	font-size: var(--fs-btn);
+	line-height: 21px;
+	text-transform: uppercase;
+}
+
+.big-floppy {
+	width: 82px;
+}
+
+.popup-button {
+	width: 293px;
+	height: 38px;
+	align-self: center;
+	margin: 0;
+}
+
+@media (width <=375px) {
+	.page {
+		width: 375px;
+	}
+	.header {
+		margin-block-end: 77px;
+	}
+	.img-container {
+		margin-block-end: 25px;
+	}
+	.card {
+		margin-block-end: 49px;
+	}
+	.floppy-button {
+		width: 308px;
+		min-height: 84px;
+		flex-direction: column;
+		padding: 13px 0px;
+	}
+	.floppy {
+		width: 30px;
+	}
 }

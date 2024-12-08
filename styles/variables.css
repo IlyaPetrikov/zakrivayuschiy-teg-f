@@ -1,1 +1,22 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+	--fs-text: 18px;
+	--fs-btn: 14px;
+	--ff-2P: 'PressStart2P';
+	--ff-Inter: 'Inter-Variable';
+	--gradient: repeating-linear-gradient(
+			90deg,
+			#d3d3d3 0 2px,
+			rgb(0 0 0/0) 2px 4px
+		),
+		repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0/0) 2px 4px),
+		repeating-linear-gradient(180deg, #e7e7e7 0%, #1a1a1a 100%);
+	--header-width: clamp(23.313rem, 16.168rem + 30.647vw, 43.75rem);
+	--header-fs: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+	--header-sub-fs: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+	--section-width: clamp(23.438rem, 16.329rem + 30.329vw, 43.625rem);
+	--img-width: clamp(23.438rem, 16.373rem + 30.141vw, 43.5rem);
+	--main-color: #000;
+	--accent-color: #ff0000;
+}
