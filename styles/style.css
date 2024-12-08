@@ -10,68 +10,6 @@
 
 */
 
-@keyframes contour {
-	0% {
-		fill: var(--main-color);
-	}
-	100% {
-		fill: var(--accent-color);
-	}
-}
-
-@keyframes core {
-	0% {
-		fill: none;
-	}
-	50% {
-		fill: var(--accent-color);
-	}
-	100% {
-		fill: var(--accent-color);
-	}
-}
-
-@keyframes main-body {
-	0% {
-		fill: none;
-	}
-	25% {
-		fill: none;
-	}
-	50% {
-		fill: var(--accent-color);
-	}
-	75% {
-		fill: var(--accent-color);
-	}
-	100% {
-		fill: var(--accent-color);
-	}
-}
-
-@keyframes heart {
-	0% {
-		fill: none;
-	}
-	50% {
-		fill: var(--accent-color);
-		transform: scale(1.2);
-	}
-	100% {
-		fill: var(--accent-color);
-		transform: scale(1);
-	}
-}
-
-@keyframes sparks {
-	0% {
-		fill: none;
-	}
-	100% {
-		fill: var(--accent-color);
-	}
-}
-
 .page {
 	display: flex;
 	flex-direction: column;
@@ -85,6 +23,7 @@
 	background-image: var(--gradient);
 	background-size: cover;
 	background-attachment: fixed;
+	font-variation-settings: 'wght' var(--font-w8t), 400;
 }
 
 .header {
@@ -170,7 +109,7 @@
 }
 
 .second-project-about-img {
-	filter: invert(1);
+	filter: invert(1) sepia(1);
 }
 
 .third-project-img {
@@ -247,16 +186,15 @@
 
 .button:focus-visible {
 	box-shadow: 2px 2px #000;
-	transition: all 0.3s;
+	transition: box-shadow 0.3s;
 }
 
 .card__icon-button {
 	background-color: transparent;
-	border: transparent;
+	border: solid 2px transparent;
 	margin-block-end: 18px;
 	cursor: pointer;
 	padding: 0;
-	transition: border 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -265,6 +203,7 @@
 
 .card__icon-button:focus-visible {
 	border: solid 2px #000;
+	transition: border 0.3s ease;
 }
 
 .is-liked .heart {
