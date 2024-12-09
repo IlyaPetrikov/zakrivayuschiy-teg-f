@@ -23,7 +23,7 @@
 	background-image: var(--gradient);
 	background-size: cover;
 	background-attachment: fixed;
-	font-variation-settings: 'wght' var(--font-weight), 400;
+	font-variation-settings: 'wght' var(--font-weight-text, 400);
 }
 
 .header {
@@ -67,6 +67,7 @@
 	border-bottom: solid 2px #000;
 	font-size: var(--fs-text);
 	padding: 5px 24px 5px 10px;
+	font-variation-settings: 'wght' var(--font-weight-title, 700);
 }
 
 .watter-mark {
@@ -220,16 +221,38 @@
 	border: solid 2px #000;
 }
 
+.heart:hover .core {
+	fill: var(--main-color);
+	transition: 0.3s linear;
+}
+
+.heart:hover .main-body {
+	fill: var(--main-color);
+	transition: 0.3s linear 0.05s;
+}
+
+.heart:active .core {
+	fill: var(--accent-color);
+	transition: fill 0.3s linear;
+}
+.heart:active .main-body {
+	fill: var(--accent-color);
+	transition: fill 0.3s linear 0.05s;
+}
+
 .like-icon.is-liked .contour {
 	fill: var(--accent-color);
+	transition: 0.3s linear 0.06s;
 }
 
 .like-icon.is-liked .core {
 	fill: var(--accent-color);
+	transition: 0.3s linear 0s;
 }
 
 .like-icon.is-liked .main-body {
 	fill: var(--accent-color);
+	transition: 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .heart {
@@ -246,47 +269,28 @@
 }
 
 .core {
-	transition: fill 0.3s linear;
+	transition: 0.3s linear 0.3s;
 }
 
 .main-body {
-	transition: fill 0.3s linear 0.05s;
+	transition: 0.3s linear;
 }
 
 .contour {
-	transition: fill 0.3s linear 0.06s;
+	transition: 0.1s linear;
 }
 
 .like-icon {
 	width: 39px;
 }
 
-.like-icon .core {
+.heart .core {
 	fill: transparent;
 	transition: fill linear 0.3s;
 }
-.like-icon .main-body {
+.heart .main-body {
 	fill: transparent;
 	transition: fill linear 0.3s 0.05s;
-}
-
-.heart:hover .core {
-	fill: var(--main-color);
-}
-
-.heart:hover .contour {
-	fill: var(--main-color);
-}
-
-.heart:hover .main-body {
-	fill: var(--main-color);
-}
-
-.heart:active .core {
-	fill: var(--accent-color);
-}
-.heart:active .main-body {
-	fill: var(--accent-color);
 }
 
 .floppy-button {
