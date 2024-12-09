@@ -10,64 +10,23 @@
 
 */
 
-@keyframes contour {
+@keyframes scale {
 	0% {
-		fill: var(--main-color);
-	}
-	100% {
-		fill: var(--accent-color);
-	}
-}
-
-@keyframes core {
-	0% {
-		fill: none;
+		transform: scale(1);
 	}
 	50% {
-		fill: var(--accent-color);
+		transform: scale(1.2);
 	}
 	100% {
-		fill: var(--accent-color);
-	}
-}
-
-@keyframes main-body {
-	0% {
-		fill: none;
-	}
-	25% {
-		fill: none;
-	}
-	50% {
-		fill: var(--accent-color);
-	}
-	75% {
-		fill: var(--accent-color);
-	}
-	100% {
-		fill: var(--accent-color);
-	}
-}
-
-@keyframes heart {
-	0% {
-		fill: none;
-	}
-	50% {
-		fill: var(--accent-color);
-		transform: scale(1.05);
-	}
-	100% {
-		fill: var(--accent-color);
 		transform: scale(1);
 	}
 }
 
 @keyframes sparks {
 	0% {
-		fill: none;
+		fill: transparent;
 	}
 	100% {
-		fill: var(--accent-color);
+		opacity: 1;
 	}
 }

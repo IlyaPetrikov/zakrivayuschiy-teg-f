@@ -3,9 +3,9 @@
 :root {
 	--fs-text: 18px;
 	--fs-btn: 14px;
-	--font-w8t: 400;
-	--ff-2P: 'PressStart2P';
-	--ff-Inter: 'Inter-Variable';
+	--font-weight: 700;
+	--accent-font: 'PressStart2P';
+	--main-font: 'Inter-Variable';
 	--gradient: repeating-linear-gradient(
 			90deg,
 			#d3d3d3 0 2px,
