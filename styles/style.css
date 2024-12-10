@@ -286,11 +286,11 @@
 
 .heart .core {
 	fill: transparent;
-	transition: fill linear 0.3s;
+	transition: fill linear 0.3s 0.03s;
 }
 .heart .main-body {
 	fill: transparent;
-	transition: fill linear 0.3s 0.05s;
+	transition: fill linear 0.3s;
 }
 
 .floppy-button {
